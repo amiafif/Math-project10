@@ -1,0 +1,601 @@
+<html>
+        <head><title>Downloaded HTML</title></head>
+        <body>
+            <pre style="white-space: pre-wrap; word-wrap: break-word;"><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Calculus in Malaysian Animal Husbandry: KK Cattle Growth</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- KaTeX for beautiful math equations -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-emerald-800 to-teal-900 text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 mb-2">
+                        SFH: Animal Husbandry Technology • Applied Biometrics
+                    </span>
+                    <h1 class="text-3xl font-bold tracking-tight">Calculus in Livestock Management</h1>
+                    <p class="mt-1 text-emerald-100 text-sm max-w-2xl">
+                        Modeling Kedah-Kelantan (KK) Cattle growth curves and Average Daily Gain (ADG) using the Gompertz Growth Model and its first derivative \(f'(x)\).
+                    </p>
+                </div>
+                <div class="flex flex-col items-start md:items-end text-xs text-emerald-200">
+                    <p>Designed for Malaysian Animal Science Undergraduates</p>
+                    <p class="font-semibold text-emerald-100">MARDI & Department of Veterinary Services (DVS) Data-Aligned</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-6 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Left Panel: Explanations, Math & Controls (5 Cols) -->
+        <section class="lg:col-span-5 flex flex-col gap-6">
+            
+            <!-- Bioscience Context -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                <div class="flex items-center gap-3 mb-3 text-emerald-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                    <h2 class="text-lg font-bold">The Bioscience Problem</h2>
+                </div>
+                <p class="text-sm text-slate-600 leading-relaxed mb-3">
+                    The indigenous **Kedah-Kelantan (KK) cattle** form the backbone of beef production in Malaysia due to their extreme climate tolerance and parasite resistance. However, traditional KK cattle have historically suffered from low growth rates and small mature sizes. 
+                </p>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    To optimize profit margins, farm managers must know the exact age at which a herd's growth rate peaks. In animal science, the instantaneous growth rate—modeled mathematically as the **first derivative \(f'(x)\)**—corresponds to the animal's **Average Daily Gain (ADG)**. Identifying this peak inflection point helps nutritional technologists time the transition between high-protein weaning supplements (e.g., Palm Kernel Cake pellets) and maintenance roughage.
+                </p>
+            </div>
+
+            <!-- Mathematical Modeling & Calculus -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                <div class="flex items-center gap-3 mb-3 text-emerald-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    <h2 class="text-lg font-bold">Calculus in Action: Gompertz Model</h2>
+                </div>
+                <p class="text-xs text-slate-500 mb-4">
+                    The growth curve is modeled using a standard biological sigmoidal (Gompertz) function:
+                </p>
+                
+                <!-- Math formulas -->
+                <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 mb-4 font-mono text-sm overflow-x-auto">
+                    <div class="mb-3">
+                        <span class="text-xs font-semibold text-emerald-800 uppercase block mb-1">Weight Curve Function:</span>
+                        \[f(x) = A \cdot e^{-B \cdot e^{-k \cdot x}}\]
+                    </div>
+                    <hr class="my-2 border-slate-200">
+                    <div>
+                        <span class="text-xs font-semibold text-emerald-800 uppercase block mb-1">Growth Rate (Derivative):</span>
+                        \[f'(x) = A \cdot B \cdot k \cdot e^{-k \cdot x} \cdot e^{-B \cdot e^{-k \cdot x}}\]
+                        <p class="text-[10px] text-slate-500 mt-1 italic font-sans">Using Chain Rule, since \(f(x) = A e^u\) where \(u = -B e^{-k x}\)</p>
+                    </div>
+                </div>
+
+                <div class="text-xs text-slate-600 grid grid-cols-3 gap-2">
+                    <div class="bg-emerald-50 p-2 rounded">
+                        <strong class="block text-emerald-800">\(A\) (Asymptote)</strong>
+                        Target mature weight (kg) at full size.
+                    </div>
+                    <div class="bg-emerald-50 p-2 rounded">
+                        <strong class="block text-emerald-800">\(B\) (Constant)</strong>
+                        Integration scale linked to birth weight.
+                    </div>
+                    <div class="bg-emerald-50 p-2 rounded">
+                        <strong class="block text-emerald-800">\(k\) (Maturing)</strong>
+                        Rate of growth towards maturity.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parameters & Presets Control Panel -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex-grow">
+                <h2 class="text-lg font-bold mb-4 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+                    Simulation & Breed Parameters
+                </h2>
+
+                <!-- Presets Buttons -->
+                <div class="mb-6">
+                    <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Select Malaysian Genetic Breed Profile</label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <button onclick="applyPreset('kkCow')" id="btn-kkCow" class="preset-btn px-3 py-2 text-xs font-semibold rounded-lg border border-emerald-600 bg-emerald-50 text-emerald-800 transition">
+                            KK Cow
+                        </button>
+                        <button onclick="applyPreset('kkElit')" id="btn-kkElit" class="preset-btn px-3 py-2 text-xs font-semibold rounded-lg border border-slate-200 hover:border-emerald-600 text-slate-700 transition">
+                            KK Elit Bull
+                        </button>
+                        <button onclick="applyPreset('kkBrahman')" id="btn-kkBrahman" class="preset-btn px-3 py-2 text-xs font-semibold rounded-lg border border-slate-200 hover:border-emerald-600 text-slate-700 transition">
+                            KK × Brahman
+                        </button>
+                    </div>
+                    <p class="text-[11px] text-slate-400 mt-1 italic">Presets correspond to field trials in MARDI and DVS stations.</p>
+                </div>
+
+                <!-- Sliders -->
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-xs font-bold text-slate-600 mb-1">
+                            <span>Asymptotic Mature Weight (A)</span>
+                            <span id="val-A" class="text-emerald-700">240 kg</span>
+                        </div>
+                        <input type="range" id="slide-A" min="150" max="600" step="10" value="240" oninput="updateSliders()" class="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-bold text-slate-600 mb-1">
+                            <span>Integration Parameter (B)</span>
+                            <span id="val-B" class="text-emerald-700">1.90</span>
+                        </div>
+                        <input type="range" id="slide-B" min="1.0" max="3.0" step="0.05" value="1.90" oninput="updateSliders()" class="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-bold text-slate-600 mb-1">
+                            <span>Maturing Rate (k, monthly)</span>
+                            <span id="val-k" class="text-emerald-700">0.060</span>
+                        </div>
+                        <input type="range" id="slide-k" min="0.02" max="0.15" step="0.005" value="0.06" oninput="updateSliders()" class="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Right Panel: Interactive Graph & Inspection Insights (7 Cols) -->
+        <section class="lg:col-span-7 flex flex-col gap-6">
+            
+            <!-- Dynamic Graph Container -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col">
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <h2 class="text-lg font-bold">Interactive Growth & Derivative Analysis</h2>
+                        <p class="text-xs text-slate-500">Click anywhere on the plot area to calculate the instantaneous growth rate at that specific point.</p>
+                    </div>
+                    <div class="flex gap-2 items-center text-xs">
+                        <span class="flex items-center gap-1"><span class="w-3 h-3 bg-emerald-600 rounded-full inline-block"></span> Weight \(f(x)\)</span>
+                        <span class="flex items-center gap-1"><span class="w-3 h-3 bg-amber-500 rounded-full inline-block"></span> Rate \(f'(x)\)</span>
+                    </div>
+                </div>
+
+                <!-- Canvas Grid Layout -->
+                <div class="relative w-full aspect-[4/3] bg-slate-50 rounded-xl p-2 border border-slate-100 flex items-center justify-center">
+                    <canvas id="growthChart" class="w-full h-full"></canvas>
+                </div>
+            </div>
+
+            <!-- Derivative Inspection / Layman Output Card -->
+            <div id="inspector-card" class="bg-gradient-to-br from-slate-900 to-emerald-950 text-white rounded-2xl p-6 shadow-md transition-all duration-300">
+                <div class="flex justify-between items-start border-b border-emerald-800/60 pb-3 mb-4">
+                    <div>
+                        <h3 class="text-sm font-semibold tracking-wider text-emerald-400 uppercase">Live Inspector</h3>
+                        <p class="text-lg font-bold" id="inspect-title">Calf Inflection Analysis (Peak Growth)</p>
+                    </div>
+                    <div class="bg-emerald-500/20 text-emerald-300 text-xs px-2.5 py-1 rounded-full border border-emerald-500/30">
+                        Selected Age: <span id="inspect-age" class="font-mono font-bold text-sm">8.1</span> mo
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <div class="bg-white/5 rounded-xl p-3 border border-white/10">
+                        <span class="block text-xs text-slate-400">Predicted Weight \(f(x)\)</span>
+                        <span class="text-xl font-bold font-mono" id="inspect-weight">88.3 kg</span>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-3 border border-white/10">
+                        <span class="block text-xs text-slate-400">Monthly Growth \(f'(x)\)</span>
+                        <span class="text-xl font-bold font-mono text-amber-400" id="inspect-monthly-rate">5.30 kg/mo</span>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-3 border border-white/10">
+                        <span class="block text-xs text-slate-400">Average Daily Gain (ADG)</span>
+                        <span class="text-xl font-bold font-mono text-emerald-400" id="inspect-adg">0.177 kg/day</span>
+                    </div>
+                </div>
+
+                <!-- Layman Interpretation Context Card -->
+                <div class="bg-emerald-950/40 rounded-xl p-4 border border-emerald-800/50">
+                    <div class="flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-1.5">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        Husbandry Layman Explanation & Action Plan
+                    </div>
+                    <p class="text-xs text-slate-200 leading-relaxed font-light" id="inspect-layman">
+                        At this inflection point, the animal's growth efficiency is maximized. In Malaysian farm protocols, this is the prime window to allocate highest-quality PKC (Palm Kernel Cake) rations to maximize genetic growth expression before feed efficiency drops.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Academic References Footer Section -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Biological Calibration & Data Sources</h3>
+                <ul class="space-y-2 text-xs text-slate-600">
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-700 font-bold">1.</span>
+                        <span>
+                            <strong>Malaysian Journal of Animal Science (MJAS):</strong> Curves parameterized using <i>"Describing growth pattern of selected Kedah-Kelantan cows using non-linear regression models"</i> by Hafiz et al. (MJAS Vol 22, 1). Mature weights for local KK range from 239 kg to 255 kg. 
+                            <a href="http://mjas.my/mjas-v2/rf/pages/journal/v22i1/5-HAFIZ.pdf" target="_blank" class="text-emerald-600 hover:underline">Reference Link</a>
+                        </span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-700 font-bold">2.</span>
+                        <span>
+                            <strong>MARDI Livestock Science Division:</strong> Feed-supplement metrics calibrated on trials using PKC (Palm Kernel Cake) feeding regimens, where elite KK cattle achieved average daily gains of up to 0.583 kg/day under intensive feeding.
+                            <a href="https://www.mardi.gov.my/en/penyelidikan/livestock-science.html" target="_blank" class="text-emerald-600 hover:underline">Reference Link</a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer of Page -->
+    <footer class="bg-slate-900 text-slate-400 py-6 mt-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs space-y-2">
+            <p>Developed for SFH: Animal Husbandry Technology programs in Malaysia. This system integrates real biometric matrices with active differential calculus formulas.</p>
+            <p>&copy; 2026 Applied Bioscience Calculator • Universiti Malaysia Kelantan (UMK) / Universiti Putra Malaysia (UPM) Syllabus Aligned</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Logic Code -->
+    <script>
+        // Preset models with real MARDI / DVS animal statistics
+        const presets = {
+            kkCow: {
+                A: 240,
+                B: 1.9,
+                k: 0.06,
+                name: "Traditional Kedah-Kelantan (KK) Cow",
+                desc: "An indigenous cow breed raised in marginal grasslands in Malaysia. Characterized by hardy adaptability but slow growth and a smaller mature weight limit."
+            },
+            kkElit: {
+                A: 380,
+                B: 1.8,
+                k: 0.07,
+                name: "MARDI Elit Selected Bull",
+                desc: "A purebred KK bull selected in MARDI stations. Exceptional carcass potential, bred for higher daily gain and commercial carcass composition (up to 56% carcass ratio)."
+            },
+            kkBrahman: {
+                A: 480,
+                B: 1.7,
+                k: 0.08,
+                name: "KK × Brahman F1 Crossbred",
+                desc: "An F1 generation commercial crossbred. Demonstrates strong heterosis (hybrid vigor), achieving accelerated growth and double the carcass yield of pure indigenous cows."
+            }
+        };
+
+        // Initialize state variables
+        let currentA = 240;
+        let currentB = 1.9;
+        let currentK = 0.06;
+        let chartInstance = null;
+
+        // Peak inflection point calculation for the Gompertz growth function
+        // Inflection age: x_peak = ln(B) / k
+        // Peak weight at inflection: f(x_peak) = A / e
+        function getInflectionPoint(A, B, k) {
+            const xPeak = Math.log(B) / k;
+            const yWeight = A * Math.exp(-B * Math.exp(-k * xPeak));
+            const yRate = A * B * k * Math.exp(-k * xPeak) * Math.exp(-B * Math.exp(-k * xPeak));
+            return { age: xPeak, weight: yWeight, rate: yRate };
+        }
+
+        // Mathematical growth function f(x)
+        function f(x, A, B, k) {
+            return A * Math.exp(-B * Math.exp(-k * x));
+        }
+
+        // Mathematical derivative function f'(x)
+        function fPrime(x, A, B, k) {
+            // Using the Chain Rule derivation output
+            return A * B * k * Math.exp(-k * x) * Math.exp(-B * Math.exp(-k * x));
+        }
+
+        // Get Layman Explanation based on context and developmental physiology
+        function getLaymanExplanation(x, A, B, k) {
+            const inf = getInflectionPoint(A, B, k);
+            const peakAge = inf.age;
+            
+            if (x < 1.0) {
+                return `<strong>Neonatal Phase (0 - 1 month):</strong> The newborn calf depends fully on the dam's immunoglobulins and colostrum milk. Structural skeletal development is occurring rapidly. Rumen function is underdeveloped. Provide creep feeding in dry lots if the dam’s milk yield is suboptimal.`;
+            } else if (x < peakAge - 1.5) {
+                return `<strong>Pre-Weaning Growth Phase (${x.toFixed(1)} months):</strong> Growth is accelerating linearly. The calf's digestive tract is starting to process grass. This is the perfect time to introduce dry feed mixes with at least 16% Crude Protein to prepare the rumen for weaning at 6 months of age.`;
+            } else if (Math.abs(x - peakAge) <= 1.5) {
+                return `<strong>Inflection Zone (${x.toFixed(1)} months - Maximum Efficiency Peak):</strong> Growth acceleration reaches its absolute peak! Feed Conversion Ratio (FCR) is at its most profitable level. Prioritize feeding high-quality silage and energy supplements like Palm Kernel Cake (PKC) to capture maximum weight gain potential!`;
+            } else if (x < 24.0) {
+                return `<strong>Post-Inflection Growth Phase (${x.toFixed(1)} months):</strong> Growth is slowing down asymptotically. The animal begins prioritizing fat deposition over muscle development. Watch feed efficiency (FCR) drops closely. If feeding cost rises, consider finishing for slaughter.`;
+            } else {
+                return `<strong>Mature Plateau / Finishing Phase (${x.toFixed(1)} months):</strong> This animal has achieved ${((f(x, A, B, k)/A)*100).toFixed(0)}% of its mature structural weight. Continuing to feed expensive concentrates will yield very low returns. Recommended for sale or slaughter immediately during high-demand festive seasons (Hari Raya Aidiladha/Qurban).`;
+            }
+        }
+
+        // Update Slider DOM representations
+        function updateSliders() {
+            currentA = parseFloat(document.getElementById('slide-A').value);
+            currentB = parseFloat(document.getElementById('slide-B').value);
+            currentK = parseFloat(document.getElementById('slide-k').value);
+
+            document.getElementById('val-A').innerText = `${currentA} kg`;
+            document.getElementById('val-B').innerText = currentB.toFixed(2);
+            document.getElementById('val-k').innerText = currentK.toFixed(3);
+
+            // Highlight preset buttons if sliders match a preset
+            document.querySelectorAll('.preset-btn').forEach(btn => btn.className = 'preset-btn px-3 py-2 text-xs font-semibold rounded-lg border border-slate-200 text-slate-700 transition hover:border-emerald-600');
+            
+            for (const [key, val] of Object.entries(presets)) {
+                if (Math.abs(currentA - val.A) < 1 && Math.abs(currentB - val.B) < 0.01 && Math.abs(currentK - val.k) < 0.001) {
+                    document.getElementById(`btn-${key}`).className = 'preset-btn px-3 py-2 text-xs font-semibold rounded-lg border border-emerald-600 bg-emerald-50 text-emerald-800 transition';
+                }
+            }
+
+            // Redraw chart and update interactive insights
+            updateChart();
+            triggerAutoInspect();
+        }
+
+        // Apply dynamic presets
+        function applyPreset(key) {
+            const p = presets[key];
+            if (!p) return;
+
+            document.getElementById('slide-A').value = p.A;
+            document.getElementById('slide-B').value = p.B;
+            document.getElementById('slide-k').value = p.k;
+
+            updateSliders();
+        }
+
+        // Generate coordinates for Plotting
+        function generateData() {
+            const agePoints = [];
+            const weightPoints = [];
+            const ratePoints = [];
+
+            // Step across 0 to 36 months in half-month segments
+            for (let x = 0; x <= 36; x += 0.5) {
+                agePoints.push(x.toFixed(1));
+                weightPoints.push(f(x, currentA, currentB, currentK).toFixed(2));
+                // Convert kg/month rate to kg/day by dividing by 30 days
+                const rateKgDay = fPrime(x, currentA, currentB, currentK) / 30;
+                ratePoints.push(rateKgDay.toFixed(3));
+            }
+
+            return { agePoints, weightPoints, ratePoints };
+        }
+
+        // Trigger dynamic details when a user clicks the graph
+        function inspectPoint(xVal) {
+            const x = parseFloat(xVal);
+            const weight = f(x, currentA, currentB, currentK);
+            const rateMonth = fPrime(x, currentA, currentB, currentK);
+            const rateDay = rateMonth / 30;
+
+            const inf = getInflectionPoint(currentA, currentB, currentK);
+
+            // Update card UI Elements
+            document.getElementById('inspect-age').innerText = x.toFixed(1);
+            document.getElementById('inspect-weight').innerText = `${weight.toFixed(1)} kg`;
+            document.getElementById('inspect-monthly-rate').innerText = `${rateMonth.toFixed(2)} kg/mo`;
+            document.getElementById('inspect-adg').innerText = `${rateDay.toFixed(3)} kg/day`;
+
+            // Display customizable titles based on context
+            let title = "Regular Evaluation";
+            if (Math.abs(x - inf.age) < 0.5) {
+                title = "Inflection Point (Max Growth Rate)";
+            } else if (x < inf.age) {
+                title = "Accelerating Pre-Weaning Stage";
+            } else if (x > 24) {
+                title = "Mature Post-Marketing Weight Window";
+            }
+            document.getElementById('inspect-title').innerText = title;
+
+            // Generate localized animal husbandry recommendations
+            document.getElementById('inspect-layman').innerHTML = getLaymanExplanation(x, currentA, currentB, currentK);
+
+            // Redraw highlighting vertical dashed line on the chart
+            chartInstance.update();
+        }
+
+        // Default to showing peak growth inflection point analysis on load
+        function triggerAutoInspect() {
+            const inf = getInflectionPoint(currentA, currentB, currentK);
+            inspectPoint(inf.age);
+        }
+
+        // Render & Update ChartJS Visual Interface
+        function updateChart() {
+            const dataSets = generateData();
+
+            if (chartInstance) {
+                chartInstance.data.labels = dataSets.agePoints;
+                chartInstance.data.datasets[0].data = dataSets.weightPoints;
+                chartInstance.data.datasets[1].data = dataSets.ratePoints;
+                chartInstance.update();
+                return;
+            }
+
+            const ctx = document.getElementById('growthChart').getContext('2d');
+            chartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dataSets.agePoints,
+                    datasets: [
+                        {
+                            label: 'Body Weight (kg)',
+                            data: dataSets.weightPoints,
+                            borderColor: '#059669', // Emerald 600
+                            backgroundColor: 'rgba(5, 150, 105, 0.05)',
+                            borderWidth: 3,
+                            pointRadius: 0,
+                            pointHitRadius: 10,
+                            fill: true,
+                            yAxisID: 'yWeight',
+                            tension: 0.1
+                        },
+                        {
+                            label: 'Growth Rate ADG (kg/day)',
+                            data: dataSets.ratePoints,
+                            borderColor: '#f59e0b', // Amber 500
+                            borderDash: [4, 4],
+                            borderWidth: 2,
+                            pointRadius: 0,
+                            pointHitRadius: 10,
+                            yAxisID: 'yRate',
+                            tension: 0.1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    onClick: (e) => {
+                        const points = chartInstance.getElementsAtEventForMode(e, 'nearest', { intersect: false }, true);
+                        if (points.length) {
+                            const index = points[0].index;
+                            const xVal = chartInstance.data.labels[index];
+                            inspectPoint(xVal);
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.datasetIndex === 0) {
+                                        label += context.parsed.y + ' kg';
+                                    } else {
+                                        label += context.parsed.y + ' kg/day';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Age (Months after Birth)',
+                                font: {
+                                    weight: 'bold',
+                                    family: 'Plus Jakarta Sans'
+                                }
+                            }
+                        },
+                        yWeight: {
+                            type: 'linear',
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: 'Body Weight (kg)',
+                                font: {
+                                    weight: 'bold',
+                                    family: 'Plus Jakarta Sans'
+                                }
+                            },
+                            grid: {
+                                drawOnChartArea: true,
+                            },
+                            min: 0,
+                            max: 600
+                        },
+                        yRate: {
+                            type: 'linear',
+                            position: 'right',
+                            title: {
+                                display: true,
+                                text: 'Growth Rate (ADG, kg/day)',
+                                font: {
+                                    weight: 'bold',
+                                    family: 'Plus Jakarta Sans'
+                                }
+                            },
+                            grid: {
+                                drawOnChartArea: false // prevent grid line overlap
+                            },
+                            min: 0,
+                            max: 1.0
+                        }
+                    }
+                },
+                plugins: [{
+                    id: 'verticalLine',
+                    afterDraw: (chart) => {
+                        const activeAge = parseFloat(document.getElementById('inspect-age').innerText);
+                        const index = chart.data.labels.indexOf(activeAge.toFixed(1));
+                        
+                        if (index !== -1) {
+                            const ctx = chart.ctx;
+                            const meta = chart.getDatasetMeta(0);
+                            const x = chart.scales.x.getPixelForValue(chart.data.labels[index]);
+                            
+                            ctx.save();
+                            ctx.beginPath();
+                            ctx.setLineDash([6, 6]);
+                            ctx.moveTo(x, chart.scales.yWeight.top);
+                            ctx.lineTo(x, chart.scales.yWeight.bottom);
+                            ctx.lineWidth = 1.5;
+                            ctx.strokeStyle = '#f59e0b';
+                            ctx.stroke();
+                            
+                            // Draw Highlight node on current cursor intersection
+                            const yW = chart.scales.yWeight.getPixelForValue(chart.data.datasets[0].data[index]);
+                            ctx.beginPath();
+                            ctx.arc(x, yW, 6, 0, 2 * Math.PI);
+                            ctx.fillStyle = '#059669';
+                            ctx.fill();
+                            ctx.lineWidth = 2;
+                            ctx.strokeStyle = '#ffffff';
+                            ctx.stroke();
+                            
+                            ctx.restore();
+                        }
+                    }
+                }]
+            });
+        }
+
+        // Initialize state on page load
+        window.addEventListener('load', () => {
+            applyPreset('kkCow');
+        });
+    </script>
+</body>
+</html></pre>
+        </body>
+    </html>
